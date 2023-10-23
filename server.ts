@@ -1,5 +1,4 @@
 import { serveFile } from "https://deno.land/std@0.203.0/http/file_server.ts"
-import { openWebsite } from "https://raw.githubusercontent.com/nhrones/Browser/master/browser.ts"
 
 const PORT = 8080
 
@@ -38,6 +37,3 @@ async function serveRoot(statusCode: number, fullPath: string) {
    ])
    return new Response(body, { status: statusCode, headers: headers });
 }
-
-// Trigger browser start
-await openWebsite(`http://localhost:${PORT}`)
